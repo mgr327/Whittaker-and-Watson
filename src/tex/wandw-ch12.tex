@@ -314,9 +314,11 @@ We have therefore $k = l$, and, denoting the product by $P$, we may write
 \end{displaymath}
 
 The general term in this product can be written
-\begin{displaymath}
-  ...
-\end{displaymath}
+\begin{multline*}
+  \theparen{1 - \frac{a_1}{n}} \ldots \theparen{1 - \frac{a_k}{n}} 
+  \theparen{1 - \frac{b_1}{n}}^{-1} \ldots \theparen{1 - \frac{b_k}{n}}^{-1} \\
+  = 1 - \frac{a_1 + a_2 + \ldots + a_k - b_1 - \ldots - b_k}{n} + A_n
+\end{multline*}
 where $A_n$ is $\bigo(n^{-2})$ when $n$ is large.
 
 In order that the infinite product may be absolutely convergent, it is
@@ -324,44 +326,57 @@ therefore necessary further (\hardsectionref{2}{7}) that
 \begin{displaymath}
   a_1 + \ldots + a_k - b_1 - \ldots - b_k = 0.
 \end{displaymath}
-
 %
 % 239
 %
-
 We can therefore introduce the factor
-
-exp /i-i ( ! + ... +ak-b,- ... - hk)
-
+\begin{displaymath}
+  \exp \thebrace{ n^{-1} \theparen{a_1 + \ldots + a_k - b_1 - \ldots - b_k}}
+\end{displaymath}
 into the general factor of the product, without altering its value;
 and thus we have
-
-p= n
-
-(i\ ), (i\ )e"...(i- *)."
-
-"=N (- )--(- )-
+\begin{displaymath}
+  P = \prod_{n=1}^\infty 
+  % use \vphantom to have parenthesis of the same size in the
+  % numerator and the denominator
+  \thebrace{
+    \frac{
+      \theparen{1 - \displaystyle \frac{a_1\vphantom{b_1}}{n}}e^{\frac{a_1}{n}}
+      \theparen{1 - \displaystyle \frac{a_2\vphantom{b_1}}{n}}e^{\frac{a_2}{n}}  \ldots
+      \theparen{1 - \displaystyle \frac{a_k\vphantom{b_1}}{n}}e^{\frac{a_k}{n}}
+    }{
+      \theparen{1 - \displaystyle \frac{b_1}{n}}e^{\frac{b_1}{n}} \ldots 
+      \theparen{1 - \displaystyle \frac{b_k}{n}}e^{\frac{b_k}{n}}}
+  } .
+\end{displaymath}
 
 But it is obvious from the Weierstrassian definition of the Gamma-
 function that
-
-,"|('" )''"]"- r(- )e-T''
-
-and so P = r(- 6,)6,r(-6 (- .) TJ l-K) . a T -CH)...akV -ak), =
-ir(l-a )
-
-a formula which expresses the general infinite product P in terms of
+\begin{displaymath}
+  \prod_{n=1}^\infty \thebrace{\theparen{1 -
+        \frac{z}{n}}e^{\frac{z}{n}} } = 
+    \frac{1}{-z \Gamma(-z) e^{-\gamma z}} ,
+\end{displaymath}
+and so $\displaystyle P = \frac{\displaystyle b_1 \Gamma(-b_1) b_2
+  \Gamma(-b_2) \ldots b_k \Gamma(-b_k)}{
+  \displaystyle a_1 \Gamma(-a_1) \ldots a_k \Gamma(-a_k)} =
+\prod_{m=1}^k \frac{\displaystyle \Gamma(1-b_m)}{\displaystyle \Gamma(1-a_m)}$;
+a formula which expresses the general infinite product $P$ in terms of
 the Gamma-function.
-
-Example 1. Prove that
-
- " (a-i-6 + ) \ r(a + l)r (6-1-1) s=i (a+ ) (6-l-s) T a + b + ) '
-
-Example 2. Shew that, if a = cos (27r/n) + i sin 27r jn\ then
-
-/ \ / \ - -
-
- (i- j(i-|;)... = -r(-x )r(-aa- )...r(-a"-i:r ) -'.
+\begin{wandwexample}
+  % Example 1.
+  Prove that
+  \begin{displaymath}
+    " (a-i-6 + ) \ r(a + l)r (6-1-1) s=i (a+ ) (6-l-s) T a + b + ) '
+  \end{displaymath}
+\end{wandwexample}
+\begin{wandwexample}
+%   Example 2.
+Shew that, if $a = \cos (2\pi /n) + i \sin (2\pi/n)$, then
+\begin{displaymath}
+  (i- j(i-|;)... = -r(-x )r(-aa- )...r(-a"-i:r ) -'.
+\end{displaymath}
+\end{wandwexample}
 
 \Subsection{12}{1}{4}{Connexion between the Gamma-function and the circular functions.}
 
